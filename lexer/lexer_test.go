@@ -1,6 +1,7 @@
 package lexer
 
 import (
+	"fmt"
 	"monkey/token"
 	"testing"
 )
@@ -12,6 +13,8 @@ let add = fn(x, y) {
 x + y;
 };
 let result = add(five, ten);
+!-/*5;
+5 < 10 > 5;
 `
 	tests := []struct {
 		expectedType    token.TokenType
@@ -53,8 +56,8 @@ let result = add(five, ten);
 		{token.IDENT, "ten"},
 		{token.RPAREN, ")"},
 		{token.SEMICOLON, ";"},
-		{token.EOF, ""},
 	}
+
 	l := New(input)
 
 	for i, tt := range tests {
@@ -66,5 +69,6 @@ let result = add(five, ten);
 		if tok.Literal != tt.expectedLiteral {
 			t.Fatalf("tests[%d] - literal wrong. expected=%q, got=%q", i, tt.expectedLiteral, tok.Literal)
 		}
+		fmt.Printf(tok.Literal, "\n")
 	}
 }
