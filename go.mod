@@ -1,3 +1,3 @@
-module github.com/tinyytorrent/writing-an-interpreter-in-go
+module monkey
 
 go 1.23.5
