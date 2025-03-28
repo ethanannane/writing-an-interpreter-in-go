@@ -1,4 +1,5 @@
 # writing-an-interpreter-in-go
+my little interpreter project
 # Monkey Interpreter in Go 
 
 Hey there! 👋  This repo is my journey through Thorsten Ball's excellent "Writing an Interpreter in Go" book.  I'm building the Monkey programming language, step-by-step, following along with the book's examples and exercises.
